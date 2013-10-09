@@ -1,0 +1,18 @@
+profile = DevTable.Profile(
+  Analyze = [closure],
+  Build = [],
+  Debug = [runfile],
+  Deploy = []
+)
+
+closure = Google.Closure(
+  ExternsLabel = 'externs',
+  IncludeDefaultExterns = true,
+  CompilationLevel = SIMPLE,
+  Files = Glob('*.js')
+)
+
+runfile = DevTable.RunFile(
+	FileSet = ProjectFiles(),
+	File = 'presentation.html'
+)
